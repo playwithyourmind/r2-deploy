@@ -15,6 +15,8 @@ async function run() {
     region: 'auto',
     endpoint,
     credentials: { accessKeyId, secretAccessKey },
+    requestChecksumCalculation: 'WHEN_REQUIRED',
+    responseChecksumValidation: 'WHEN_REQUIRED',
   });
 
   core.info(`Deploying "${publishDir}" to bucket "${bucket}" via ${endpoint}`);

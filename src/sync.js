@@ -45,7 +45,6 @@ async function listRemoteObjects(client, bucket) {
 
 async function uploadFile(client, bucket, localPath, key) {
   const body = fs.readFileSync(localPath);
-  const md5 = crypto.createHash('md5').update(body).digest('base64');
   const contentType = getContentType(key);
 
   await client.send(
@@ -54,7 +53,6 @@ async function uploadFile(client, bucket, localPath, key) {
       Key: key,
       Body: body,
       ContentType: contentType,
-      ContentMD5: md5,
     })
   );
 }
