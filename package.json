@@ -1,0 +1,22 @@
+{
+  "name": "r2-deploy",
+  "version": "1.0.0",
+  "description": "GitHub Action to deploy static sites to Cloudflare R2",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "ncc build src/index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/playwithyourmind/r2-deploy.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@aws-sdk/client-s3": "^3.800.0",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3"
+  }
+}
